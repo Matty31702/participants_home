@@ -1,17 +1,18 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import Link from 'next/link';
+import React, { useState } from "react";
+import Image from "next/image";
+import sinulogpic from "../../../../public/images/sinulogpic.jpg";
 
-const ServicePage: React.FC = () => {
+const AvailableEvents: React.FC = () => {
   const [isEventsDropdownOpen, setIsEventsDropdownOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-  
+
   const toggleEventsDropdown = () => {
     setIsEventsDropdownOpen(!isEventsDropdownOpen);
     setIsProfileDropdownOpen(false); // Ensure the profile dropdown is closed
   };
-  
+
   const toggleProfileDropdown = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
     setIsEventsDropdownOpen(false); // Ensure the events dropdown is closed
@@ -112,14 +113,14 @@ const ServicePage: React.FC = () => {
                         >
                           Calendar
                         </a>
-                        <Link
-                          href="/events/available_events"
+                        <a
+                          href="/event2"
                           className="block px-4 py-2 text-base text-gray-700"
                           role="menuitem"
                           tabIndex={-1}
                         >
                           Events
-                        </Link>
+                        </a>
                         <a
                           href="/event3"
                           className="block px-4 py-2 text-base text-gray-700"
@@ -289,128 +290,45 @@ const ServicePage: React.FC = () => {
 
       {/* Main Content*/}
       <section className="relative">
-        <div className="bg-black min-h-screen mt-">
-          <div className="text-white ml-48">
-            <h1 className="uppercase text-yellow-400 text-lg font-bold">
-              September 2023
+        <div className="bg-black min-h-screen">
+          <div className="flex justify-center min-w-fit rounded-xl">
+            <Image
+              src={sinulogpic}
+              alt="Sinulog Festival"
+              width={800}
+              height={300}
+              objectFit="cover"
+            />
+          </div>
+          <div className="flex justify-center gap-5 mt-4">
+            <button className="text-black font-bold p-3 bg-yellow-400 rounded-lg">
+              Join event
+            </button>
+            <button className="text-black font-bold p-3 bg-yellow-400 rounded-lg">
+              Copy Event Link
+            </button>
+          </div>
+          <div className="text-white ml-40">
+            <h1 className="text-yellow-400 font-bold text-3xl">
+              SINULOG FESTIVAL
             </h1>
-            <h1 className="uppercase text-white text-lg font-bold">
-              Book event
-            </h1>
+            <p className="font-semibold">Date of event: Jan. 16-21, 2024</p>
           </div>
-          <div className="mt-4 border-1 border-white border-b"></div>
-          <div className="flex justify-center text-white">
-            <h1 className="italic font-semibold text-lg mt-6">
-              Mr./Mrs./Ms./Sir/Ma'am
-            </h1>
+          <div
+            className="bodytext text-white ml-40 mt-4"
+            style={{ width: 1000 }}
+          >
+            <h1 className="text-yellow-400 font-bold text-3xl">Details</h1>
+            <p className="text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
           </div>
-          <div className="flex justify-center mt-4">
-            <div
-              className="flex gap-5 p-5 bg-gray-600 items-center "
-              style={{ width: 400 }}
-            >
-              <div
-                className="bg-yellow-400 mr-20"
-                style={{ padding: 20, borderRadius: "50%" }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="black"
-                  className="size-8"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
-                  />
-                </svg>
-              </div>
-              <div className="text-white">
-                <h1 className="text-yellow-400 font-bold text-lg">
-                  Event Type
-                </h1>
-                <p className="">WEDDING</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center mt-4">
-            <div
-              className="flex gap-5 p-5 bg-gray-600 items-center "
-              style={{ width: 400 }}
-            >
-              <div
-                className="bg-yellow-400 mr-20"
-                style={{ padding: 20, borderRadius: "50%" }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="black"
-                  className="size-8"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
-                  />
-                </svg>
-              </div>
-              <div className="text-white">
-                <h1 className="text-yellow-400 font-bold text-lg">
-                  Event Date
-                </h1>
-                <p className="uppercase">01 December 2023</p>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center mt-4">
-            <div
-              className="flex gap-5 p-5 bg-gray-600 items-center "
-              style={{ width: 400 }}
-            >
-              <div
-                className="bg-yellow-400 mr-20"
-                style={{ padding: 20, borderRadius: "50%" }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="black"
-                  className="size-8"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
-                  />
-                </svg>
-              </div>
-              <div className="text-white">
-                <h1 className="text-yellow-400 font-bold text-lg">
-                  Event Time
-                </h1>
-                <p className="uppercase">15:00pm - 22:00pm</p>
-              </div>
-            </div>
-          </div>
-          <div className="ml-48 text-yellow-400 text-xl font-bold mt-6">
-            <h1>Description</h1>
-            <p className="text-white font-semibold">description sa event</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Section */}
-      <section className="bg-customColor_black h-custom-80">
-        <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
-          <h1 className="text-white text-4xl">Content Here</h1>
         </div>
       </section>
 
@@ -627,7 +545,6 @@ const ServicePage: React.FC = () => {
       </footer>
     </div>
   );
-}
+};
 
-export default ServicePage;
-
+export default AvailableEvents;
